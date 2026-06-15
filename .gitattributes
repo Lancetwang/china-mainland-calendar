@@ -1,3 +1,4 @@
 *.ics text eol=lf
 *.md text eol=lf
+*.mjs text eol=lf
 LICENSE text eol=lf

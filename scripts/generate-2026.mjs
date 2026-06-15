@@ -7,7 +7,7 @@ const root = resolve(__dirname, "..");
 
 const calendarName = "中国大陆日历 2026";
 const calendarDescription =
-  "2026年中国大陆法定节日、调休补班、传统节日、二十四节气及常用纪念日";
+  "2026年中国大陆法定节日、连续休假、调休补班、传统节日、二十四节气及常用纪念日";
 const dtstamp = "20260615T080000Z";
 
 const sources = {
@@ -18,19 +18,32 @@ const sources = {
 };
 
 const events = [
-  // Statutory public holidays and adjusted workdays.
+  // Statutory festival days, vacation ranges, and adjusted workdays.
   event("2026-01-01", "元旦", "法定节日"),
+  eventRange("2026-01-01", "2026-01-03", "元旦休假", "连续休假", sources.holidays),
   event("2026-01-04", "补班：元旦调休", "调休补班", sources.holidays),
+
+  eventRange("2026-02-15", "2026-02-23", "春节休假", "连续休假", sources.holidays),
   event("2026-02-14", "补班：春节调休", "调休补班", sources.holidays),
   event("2026-02-17", "春节", "传统节日；法定节日"),
   event("2026-02-28", "补班：春节调休", "调休补班", sources.holidays),
+
+  eventRange("2026-04-04", "2026-04-06", "清明节休假", "连续休假", sources.holidays),
   event("2026-04-05", "清明节（清明）", "传统节日；法定节日；二十四节气"),
+
   event("2026-05-01", "劳动节", "法定节日"),
+  eventRange("2026-05-01", "2026-05-05", "劳动节休假", "连续休假", sources.holidays),
   event("2026-05-09", "补班：劳动节调休", "调休补班", sources.holidays),
+
   event("2026-06-19", "端午节", "传统节日；法定节日"),
+  eventRange("2026-06-19", "2026-06-21", "端午节休假", "连续休假", sources.holidays),
+
   event("2026-09-20", "补班：国庆节调休", "调休补班", sources.holidays),
   event("2026-09-25", "中秋节", "传统节日；法定节日"),
+  eventRange("2026-09-25", "2026-09-27", "中秋节休假", "连续休假", sources.holidays),
+
   event("2026-10-01", "国庆节", "法定节日"),
+  eventRange("2026-10-01", "2026-10-07", "国庆节休假", "连续休假", sources.holidays),
   event("2026-10-10", "补班：国庆节调休", "调休补班", sources.holidays),
 
   // 24 solar terms. Times are from HKO, but calendar entries are all-day.
@@ -117,12 +130,16 @@ writeFileSync(resolve(root, "china-mainland.ics"), ics, "utf8");
 writeFileSync(resolve(root, "calendars", "china-mainland-2026.ics"), ics, "utf8");
 
 function event(date, summary, category, source = "") {
-  return { date, summary, category, source };
+  return { date, endDate: date, summary, category, source };
+}
+
+function eventRange(date, endDate, summary, category, source = "") {
+  return { date, endDate, summary, category, source };
 }
 
 function toVevent(item) {
-  const start = item.date.replaceAll("-", "");
-  const end = addOneDay(item.date).replaceAll("-", "");
+  const start = compactDate(item.date);
+  const end = compactDate(addOneDay(item.endDate));
   const uid = `${start}-${slug(item.summary)}@china-mainland-calendar`;
   const description = [`类别：${item.category}`, item.source ? `来源：${item.source}` : ""]
     .filter(Boolean)
@@ -140,6 +157,10 @@ function toVevent(item) {
     "TRANSP:TRANSPARENT",
     "END:VEVENT",
   ];
+}
+
+function compactDate(date) {
+  return date.replaceAll("-", "");
 }
 
 function addOneDay(date) {

@@ -1,6 +1,6 @@
 # China Mainland Calendar
 
-An iCalendar (`.ics`) subscription for China mainland statutory holidays, adjusted workdays, traditional Chinese festivals, the 24 solar terms, and commonly used observances.
+An iCalendar (`.ics`) subscription for China mainland statutory holidays, vacation ranges, adjusted workdays, traditional Chinese festivals, the 24 solar terms, and commonly used observances.
 
 This repository is organized by Gregorian calendar year, so it can be updated year by year without changing the project name.
 
@@ -12,6 +12,7 @@ This repository is organized by Gregorian calendar year, so it can be updated ye
 ## Included In 2026
 
 - Statutory China mainland holidays as single-day calendar entries.
+- Official vacation ranges, named like `春节休假`.
 - Adjusted make-up workdays, clearly marked with `补班`.
 - The 24 solar terms.
 - Traditional Chinese festivals such as Lunar New Year's Eve, Spring Festival, Lantern Festival, Dragon Boat Festival, Qixi Festival, Mid-Autumn Festival, Double Ninth Festival, Winter Solstice, and others.
@@ -19,7 +20,7 @@ This repository is organized by Gregorian calendar year, so it can be updated ye
 
 Holiday and adjusted workday data is based on the official 2026 public holiday arrangement released by the General Office of the State Council. Solar term data is based on the Hong Kong Observatory.
 
-Holiday vacation ranges are intentionally not included. For example, Dragon Boat Festival appears as one event on the festival day, while make-up workdays are listed separately.
+Festival days and their vacation ranges are separate entries. For example, Dragon Boat Festival appears as `端午节`, while the vacation range appears as `端午节休假`; make-up workdays are listed separately.
 
 ## Subscribe On iPhone
 

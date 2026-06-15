@@ -1,6 +1,6 @@
 # China Mainland Calendar
 
-An iCalendar (`.ics`) subscription for China mainland holidays, adjusted workdays, and commonly used observances.
+An iCalendar (`.ics`) subscription for China mainland statutory holidays, adjusted workdays, traditional Chinese festivals, the 24 solar terms, and commonly used observances.
 
 This repository is organized by Gregorian calendar year, so it can be updated year by year without changing the project name.
 
@@ -11,11 +11,15 @@ This repository is organized by Gregorian calendar year, so it can be updated ye
 
 ## Included In 2026
 
-- Official China mainland public holidays.
-- Adjusted make-up workdays.
-- Common observances such as Mother's Day, Father's Day, Lantern Festival, Qixi Festival, Teachers' Day, Double Ninth Festival, Christmas, and others.
+- Statutory China mainland holidays as single-day calendar entries.
+- Adjusted make-up workdays, clearly marked with `补班`.
+- The 24 solar terms.
+- Traditional Chinese festivals such as Lunar New Year's Eve, Spring Festival, Lantern Festival, Dragon Boat Festival, Qixi Festival, Mid-Autumn Festival, Double Ninth Festival, Winter Solstice, and others.
+- Common observances such as Mother's Day, Father's Day, Women's Day, Youth Day, Children's Day, Teachers' Day, Christmas, and others.
 
-Holiday and adjusted workday data is based on the official 2026 public holiday arrangement released by the General Office of the State Council.
+Holiday and adjusted workday data is based on the official 2026 public holiday arrangement released by the General Office of the State Council. Solar term data is based on the Hong Kong Observatory.
+
+Holiday vacation ranges are intentionally not included. For example, Dragon Boat Festival appears as one event on the festival day, while make-up workdays are listed separately.
 
 ## Subscribe On iPhone
 
@@ -39,10 +43,11 @@ You can also replace `https://` with `webcal://` in many calendar apps.
 
 ## Updating A New Year
 
-1. Add the new yearly file under `calendars/`, for example `calendars/china-mainland-2027.ics`.
-2. Replace `china-mainland.ics` with the newest maintained year.
-3. Update the README files.
-4. Tag a release if useful.
+1. Add or update a generator script under `scripts/`.
+2. Generate the new yearly file under `calendars/`, for example `calendars/china-mainland-2027.ics`.
+3. Replace `china-mainland.ics` with the newest maintained year.
+4. Update the README files.
+5. Tag a release if useful.
 
 ## Notes
 

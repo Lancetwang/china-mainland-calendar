@@ -15,8 +15,6 @@ const sources = {
     "国务院办公厅关于2026年部分节假日安排的通知：https://big5.www.gov.cn/gate/big5/www.gov.cn/gongbao/2025/issue_12406/202511/content_7048922.html",
   solarTerms:
     "香港天文台二十四节气资料：https://www.hko.gov.hk/en/gts/astronomy/Solar_Term.htm",
-  sanfu:
-    "三伏日期按夏至后庚日和立秋后庚日推算；2026年为初伏7月15日至7月24日、中伏7月25日至8月13日、末伏8月14日至8月23日",
 };
 
 const events = [
@@ -72,12 +70,6 @@ const events = [
   event("2026-11-22", "小雪", "二十四节气", `${sources.solarTerms}；香港时间15:23`),
   event("2026-12-07", "大雪", "二十四节气", `${sources.solarTerms}；香港时间10:53`),
   event("2026-12-22", "冬至", "传统节日；二十四节气", `${sources.solarTerms}；香港时间04:50`),
-
-  // Seasonal living markers.
-  event("2026-07-15", "入伏", "三伏", sources.sanfu),
-  eventRange("2026-07-15", "2026-07-24", "初伏", "三伏", sources.sanfu),
-  eventRange("2026-07-25", "2026-08-13", "中伏", "三伏", sources.sanfu),
-  eventRange("2026-08-14", "2026-08-23", "末伏", "三伏", sources.sanfu),
 
   // Traditional Chinese festivals and common mainland observances.
   event("2026-01-26", "腊八节", "传统节日"),

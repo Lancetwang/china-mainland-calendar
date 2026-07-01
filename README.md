@@ -1,6 +1,6 @@
 # China Mainland Calendar
 
-An iCalendar (`.ics`) subscription for China mainland statutory holidays, vacation ranges, adjusted workdays, traditional Chinese festivals, the 24 solar terms, and commonly used observances.
+An iCalendar (`.ics`) subscription for China mainland statutory holidays, vacation ranges, adjusted workdays, traditional Chinese festivals, the 24 solar terms, Sanfu days, civic remembrance days, and commonly used observances.
 
 This repository is organized by Gregorian calendar year, so it can be updated year by year without changing the project name.
 
@@ -15,10 +15,12 @@ This repository is organized by Gregorian calendar year, so it can be updated ye
 - Official vacation ranges, named like `春节休假`.
 - Adjusted make-up workdays, clearly marked with `补班`.
 - The 24 solar terms.
+- Sanfu days, including `入伏`, `初伏`, `中伏`, and `末伏`.
 - Traditional Chinese festivals such as Lunar New Year's Eve, Spring Festival, Lantern Festival, Dragon Boat Festival, Qixi Festival, Mid-Autumn Festival, Double Ninth Festival, Winter Solstice, and others.
+- Civic and remembrance days such as China's Space Day, National Disaster Prevention and Reduction Day, Victory Day, Martyrs' Day, National Constitution Day, National Memorial Day for Nanjing Massacre Victims, and others.
 - Common observances such as Mother's Day, Father's Day, Women's Day, Youth Day, Children's Day, Teachers' Day, Christmas, and others.
 
-Holiday and adjusted workday data is based on the official 2026 public holiday arrangement released by the General Office of the State Council. Solar term data is based on the Hong Kong Observatory.
+Holiday and adjusted workday data is based on the official 2026 public holiday arrangement released by the General Office of the State Council. Solar term data is based on the Hong Kong Observatory. Sanfu dates are calculated from the traditional Geng-day rule.
 
 Festival days and their vacation ranges are separate entries. For example, Dragon Boat Festival appears as `端午节`, while the vacation range appears as `端午节休假`; make-up workdays are listed separately.
 
